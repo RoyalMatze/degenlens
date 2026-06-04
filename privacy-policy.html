@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — DegenLens by CryptoMatze</title>
+<style>
+  :root {
+    --bg: #0a0b0e;
+    --bg2: #0f1014;
+    --gold: #c9960c;
+    --gold2: #e8b020;
+    --gold3: #ffd060;
+    --t: rgba(248,244,235,1);
+    --t2: rgba(248,244,235,.7);
+    --t3: rgba(248,244,235,.4);
+    --line: rgba(201,150,12,.18);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--t);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    font-size: 15px;
+    padding: 40px 20px 80px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 28px;
+    background: linear-gradient(135deg, var(--gold3), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+    letter-spacing: -.01em;
+  }
+  .subtitle {
+    color: var(--t2);
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  .updated {
+    color: var(--t3);
+    font-size: 13px;
+    font-family: 'SF Mono', Menlo, monospace;
+    margin-bottom: 40px;
+  }
+  h2 {
+    font-size: 20px;
+    color: var(--gold3);
+    margin-top: 36px;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+  }
+  h3 {
+    font-size: 16px;
+    color: var(--gold2);
+    margin-top: 22px;
+    margin-bottom: 8px;
+  }
+  p { margin-bottom: 14px; color: var(--t); }
+  ul { margin-left: 22px; margin-bottom: 14px; }
+  li { margin-bottom: 8px; }
+  strong { color: var(--gold3); }
+  code {
+    background: var(--bg2);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'SF Mono', Menlo, monospace;
+    font-size: 13px;
+    color: var(--gold3);
+    border: 1px solid var(--line);
+  }
+  a {
+    color: var(--gold2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--gold);
+  }
+  a:hover { color: var(--gold3); }
+  .footer {
+    margin-top: 60px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    color: var(--t3);
+    font-size: 13px;
+    text-align: center;
+  }
+  .key-point {
+    background: var(--bg2);
+    border-left: 3px solid var(--gold);
+    padding: 14px 18px;
+    margin: 16px 0;
+    border-radius: 4px;
+  }
+  .key-point strong { display: block; margin-bottom: 6px; }
+</style>
+</head>
+<body>
+
+<h1>Privacy Policy</h1>
+<div class="subtitle">DegenLens by CryptoMatze — Chrome Extension</div>
+<div class="updated">Last updated: 2026-06-04</div>
+
+<div class="key-point">
+  <strong>Short version:</strong>
+  DegenLens does not collect, store, or transmit any personal data about you to its own servers. All processing happens locally in your browser. The extension queries public third-party APIs (DexScreener, RugCheck, GoPlus, Pump.fun) for token data, and includes referral codes on outbound trade links to Photon.
+</div>
+
+<h2>1. What DegenLens Does</h2>
+<p>
+  DegenLens is an informational tool that injects a side panel into supported websites
+  (DexScreener, Pump.fun, and Photon) to display on-chain risk intelligence about
+  Solana memecoins — including liquidity, holder concentration, security checks, and
+  bonding curve status. It is provided <strong>as-is</strong> for informational purposes
+  only and is <strong>not financial advice</strong>.
+</p>
+
+<h2>2. Data We Do Not Collect</h2>
+<p>DegenLens does <strong>not</strong>:</p>
+<ul>
+  <li>Collect personally identifiable information (PII)</li>
+  <li>Track your browsing history outside the supported sites</li>
+  <li>Access your wallet, private keys, seed phrases, or trading activity</li>
+  <li>Send any analytics, telemetry, or usage data to first-party servers</li>
+  <li>Store any data on external servers (the extension has no backend)</li>
+  <li>Sell or share data with third parties</li>
+</ul>
+
+<h2>3. Data Stored Locally on Your Device</h2>
+<p>
+  DegenLens uses Chrome's <code>chrome.storage.sync</code> API to persist a small set
+  of user preferences across your signed-in Chrome browsers:
+</p>
+<ul>
+  <li><code>autoOpen</code> — whether the analysis panel opens automatically on supported sites</li>
+  <li><code>showSignals</code> — whether the narrative signal section is shown</li>
+</ul>
+<p>
+  This data never leaves your Google account's sync mechanism. We have no access to it.
+</p>
+
+<h2>4. Third-Party APIs We Query</h2>
+<p>
+  When you open a token page on a supported site, DegenLens sends the token's
+  on-chain address to the following <strong>public</strong> third-party APIs to fetch
+  market and security data:
+</p>
+<ul>
+  <li><strong>DexScreener API</strong> (<code>api.dexscreener.com</code>) — token price, liquidity, volume, transactions, social links, boost status</li>
+  <li><strong>RugCheck API</strong> (<code>api.rugcheck.xyz</code>) — mint/freeze authority, LP status, insider networks, risk score (Solana only)</li>
+  <li><strong>GoPlus Security API</strong> (<code>api.gopluslabs.io</code>) — honeypot detection, ownership status, holder count, tax checks</li>
+  <li><strong>Pump.fun frontend API</strong> (<code>frontend-api.pump.fun</code>) — bonding curve status, community replies, creator wallet (Pump.fun tokens only)</li>
+</ul>
+<p>
+  These APIs receive only the public token address. They are public services with
+  their own privacy policies. The requests are made directly from your browser to
+  these services — DegenLens does not proxy or log them.
+</p>
+
+<h2>5. Affiliate / Referral Disclosure</h2>
+<div class="key-point">
+  <strong>Affiliate disclosure:</strong>
+  Trade links in DegenLens contain a referral handle for Photon
+  (<code>handle=32735556bb47a3ec8bce9c</code>). If you trade on Photon after clicking
+  these links, the extension's author may earn a share of Photon's trading fees as
+  part of Photon's public referral program. This does not affect the price you pay
+  or the data shown to you. You can verify this in the source code or by inspecting
+  any "Trade on Photon" link before clicking.
+</div>
+
+<h2>6. Permissions Used</h2>
+<p>DegenLens requests the following Chrome extension permissions:</p>
+<ul>
+  <li><code>activeTab</code> — to detect which token page you are on (required to fetch its data)</li>
+  <li><code>storage</code> — to remember your settings between sessions (see Section 3)</li>
+  <li><strong>Host permissions</strong> for the supported sites and APIs listed above — required to inject the panel and fetch data</li>
+</ul>
+<p>The extension does not request any other browser permissions.</p>
+
+<h2>7. Cookies</h2>
+<p>
+  DegenLens does not set or read any cookies of its own. The third-party sites
+  (DexScreener, Pump.fun, Photon) and APIs may set their own cookies as part of
+  their normal operation — these are governed by their respective privacy policies.
+</p>
+
+<h2>8. Children's Privacy</h2>
+<p>
+  DegenLens is not directed at, and not intended for use by, children under 13.
+  Cryptocurrency trading involves significant risk and is not suitable for minors.
+</p>
+
+<h2>9. No Financial Advice</h2>
+<p>
+  DegenLens provides on-chain data and heuristic risk scoring for informational
+  purposes only. Nothing in the extension constitutes financial, investment, legal,
+  or tax advice. Cryptocurrency and memecoin trading is highly risky and can result
+  in total loss of capital. Always do your own research (DYOR) and consult a qualified
+  professional before making financial decisions.
+</p>
+
+<h2>10. Changes to This Policy</h2>
+<p>
+  We may update this privacy policy from time to time. Material changes will be
+  reflected by an updated "Last updated" date at the top of this page. Continued
+  use of the extension after changes constitutes acceptance.
+</p>
+
+<h2>11. Contact</h2>
+<p>
+  Questions about this privacy policy or the extension: reach out on X / Twitter
+  at <a href="https://x.com/realCryptoMatze" target="_blank" rel="noopener">@realCryptoMatze</a>.
+</p>
+
+<div class="footer">
+  DegenLens by CryptoMatze · Knowledge is your biggest asset
+</div>
+
+</body>
+</html>
